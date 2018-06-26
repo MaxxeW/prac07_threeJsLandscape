@@ -41,6 +41,16 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
 
   document.body.appendChild(renderer.domElement);
+
+
+  // Lights
+  let topLight = new THREE.DirectionalLight(0xffffff, 1);
+  topLight.position.set(0, 1, 1).normalize();
+  scene.add(topLight);
+
+  let bottomLight = new THREE.DirectionalLight(0xffffff, 0.4);
+  bottomLight.position.set(1, -1, 1).normalize();
+  scene.add(bottomLight);
 }
 
 
@@ -56,6 +66,6 @@ function render() {
   let vertices = plane.geometry.vertices;
 
   for (let i = 0; i < vertices.length; i++) {
-    
+
   }
 }
